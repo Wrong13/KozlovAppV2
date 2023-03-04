@@ -1,0 +1,57 @@
+﻿<Window x:Class="KozlovAppV2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KozlovAppV2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="500"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="{DynamicResource MaterialDesignPaper}"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+         ResizeMode="NoResize"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.6*"/>
+        </Grid.RowDefinitions>
+
+
+            <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.4*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <TextBox
+                x:Name="LogBox"
+              materialDesign:HintAssist.Hint="Введите логин"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox 
+          x:Name="PassBox"
+          materialDesign:HintAssist.Hint="Введите пароль"
+          Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+                <TextBlock FontSize="16" x:Name="DangerBlock" HorizontalAlignment="Center" />
+            </StackPanel>
+            </Grid>
+                            
+
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <Button Content="Войти" x:Name="AuthBtn" Click="AuthBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
